@@ -1,0 +1,48 @@
+
+
+<md-content layout-padding>
+  <md-card>
+    <md-card-title class="title">
+        SHG Creation Form
+    </md-card-title>
+    <md-card-content>
+        <form name="create-group">
+            <div>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Name of SHG</label>
+                    <input ng-model="group.name" type="text">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Under ALF</label>
+                    <input ng-model="group.slf" type="text">
+                </md-input-container>
+                <md-input-container>
+                    <label>SHG Corpus</label>
+                    <input ng-model="group.corpus" type="number">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Number of Members</label>
+                    <input type="number" ng-model="noOfMembers" ng-change="addMember(noOfMembers)" >
+                </md-input-container>
+                <div class="md-block" ng-repeat="user in group.users">
+                  <div>
+                      <md-input-container>
+                            <input type="radio" name="is_leader" ng-model="user.is_leader" value="true"/>
+                      </md-input-container>
+                      <md-input-container flex-gt-sm>
+                        <label>Member Name</label>
+                        <input ng-model="user.name" type="text">
+                      </md-input-container>
+                      <md-input-container flex-gt-sm>
+                        <label>Inital Corpus</label>
+                        <input ng-model="user.corpus" type="number">
+                      </md-input-container>
+                  </div>
+                </div>
+
+                <md-button class="md-raised md-primary" ng-click="createGroup(group)">Create Group</md-button>
+        </form>
+    <md-card-content>
+
+  </md-card>
+</md-content>

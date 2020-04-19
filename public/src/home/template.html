@@ -1,0 +1,38 @@
+<div ng-cloak >
+  <md-content class="md-padding">
+     <md-card >
+       <md-card-title class="title">
+         <md-card-title-text>Area Meeting Record</md-card-title-text>
+       </md-card-title>
+       <md-card-content class="md-padding">
+
+         <table class='mep-table'>
+           <thead>
+             <th style="width:40%">Name of Area</th>
+             <th style="width:10%">Current Corpus</th>
+             <th style="width:15%">Last Meeting</th>
+             <th style="width:15%">Meeting Due</th>
+             <th style="width:20%"></th>
+           </thead>
+            <tbody>
+              <tr ng-repeat="area in areas | orderBy: 'next_meeting_date'">
+                <td>{{area.name}}</td>
+                <td>{{area.corpus | currency:'₹'}}</td>
+                <td>{{area.last_meeting_date | date}}</td>
+                <td>{{area.next_meeting_date | date}}</td>
+                <td style="align:left">
+                    <md-button class="md-raised md-primary" ui-sref="viewGroup({shg_id:area.id})">View</md-button>
+                    <md-button class="md-primary md-raised" ui-sref="addMeeting({shg_id:area.id})">Record</md-button>
+                  <!--<md-button class="md-raised">Edit</md-button>-->
+                </td>
+              </tr>
+
+            </tbody>
+         </table>
+
+
+       </md-card-content>
+     </md-card>
+  </md-content>
+
+</div>
