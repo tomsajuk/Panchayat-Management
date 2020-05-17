@@ -43,6 +43,7 @@ router.post('/create', function(req, res, next) {
     let alf_details = {};
     alf_details.name = req.body.name;
     alf_details.corpus = req.body.corpus;
+    alf_details.under_tlf = req.body.under_tlf;
     let shgs = req.body.members;
     console.log(shgs);
     ALF.create(alf_details).then(alf => {
@@ -58,7 +59,20 @@ router.post('/create', function(req, res, next) {
         res.status(201);
         res.end()
     });
-})
+});
+
+router.get('/tlf/:tlf_id', function(req, res, next) {
+    console.log(req.params.tlf_id);
+    let tlf_id = parseInt(req.params.tlf_id);
+  ALF.findAll({
+      where: { under_tlf: tlf_id }
+  }).then(alfs => {
+    console.log("All ALFs:", JSON.stringify(alfs, null, 4));
+    res.json(alfs);
+    res.status(200);
+    res.end();
+  });
+});
 
 
 module.exports = router;

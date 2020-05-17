@@ -3,40 +3,36 @@
 <md-content layout-padding>
   <md-card>
     <md-card-title class="title">
-        ALF Creation Form
+        TLF Creation Form
     </md-card-title>
     <md-card-content>
         <form name="create-group">
             <div>
                 <md-input-container class="md-block" flex-gt-sm>
-                    <label>Name of ALF</label>
+                    <label>Name of TLF</label>
                     <input ng-model="group.name" type="text">
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-sm>
-                    <label>Under TLF</label>
-                    <md-select ng-model="group.under_tlf">
-                        <md-option ng-repeat="tlf in tlfs" value="{{tlf.id}}">
-                            {{tlf.name}}
-                        </md-option>
-                    </md-select>
+                    <label>District</label>
+                    <input ng-model="group.district" type="text">
                 </md-input-container>
                 <md-input-container>
-                    <label>ALF Corpus</label>
+                    <label>TLF Corpus</label>
                     <input ng-model="group.corpus" type="number">
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-sm>
-                    <label>Number of SHGs</label>
+                    <label>Number of ALFs</label>
                     <input type="number" ng-model="noOfMembers" ng-change="addMember(noOfMembers)" >
                 </md-input-container>
-                <div class="md-block" ng-repeat="shg in group.members">
+                <div class="md-block" ng-repeat="alf in group.members">
                   <div>
                       <md-input-container flex-gt-sm>
-                        <label>SHG Name</label>
-                        <input ng-model="shg.name" type="text">
+                        <label>ALF Name</label>
+                        <input ng-model="alf.name" type="text">
                       </md-input-container>
                       <md-input-container flex-gt-sm>
                         <label>Inital Corpus</label>
-                        <input ng-model="shg.corpus" type="number">
+                        <input ng-model="alf.corpus" type="number">
                       </md-input-container>
                   </div>
                 </div>

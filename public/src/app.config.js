@@ -15,6 +15,10 @@
                 .state('shg', {
                     url: '/shg',
                     component: 'shgGroup'
+                })
+                .state('tlf', {
+                    url: '/tlf',
+                    component: 'tlfGroup'
                 });
             $urlRouterProvider.otherwise('/');
     });

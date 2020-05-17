@@ -1,5 +1,5 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('alf_details', {
+    return sequelize.define('tlf_details', {
       id: {
         type: type.INTEGER,
         allowNull: false,
@@ -10,8 +10,8 @@ module.exports = (sequelize, type) => {
         type: type.STRING,
         allowNull: false
       },
-      under_tlf: {
-        type: type.INTEGER,
+      district: {
+        type: type.STRING,
         allowNull: true   //change it later
       },
       leader_id: {
@@ -33,7 +33,7 @@ module.exports = (sequelize, type) => {
           type: type.DECIMAL(10,2)
       }
     }, {
-      modelName: 'alf_details',
+      modelName: 'tlf_details',
       timestamps: false
     });
 }

@@ -5,12 +5,6 @@
         $scope.group = {};
         $scope.group.members = [{}];
         $scope.noOfMembers = 1;
-        $scope.tlfs = []
-
-        $http.get('/api/tlf/name').then(function(res) {
-            $scope.tlfs = res.data;
-            console.log(res.data);
-        });
 
         $scope.addMember = function(nums) {
           let length = $scope.group.members.length;
@@ -24,17 +18,17 @@
           }
         }
 
-        $scope.createGroup = function(alfgroup) {   // TODO: check how radio value can be passed
-            console.log(alfgroup);
-            $http.post('/api/alf/create',alfgroup).then(function(res) {
+        $scope.createGroup = function(tlfgroup) {   // TODO: check how radio value can be passed
+            console.log(tlfgroup);
+            $http.post('/api/tlf/create',tlfgroup).then(function(res) {
                 console.log(res);
                 $state.go('home');
             });
         }
     }
 
-    angular.module('alfGroup').component('alf.createGroup', {
-        templateUrl: 'src/alf-group/create-group/template.html',
+    angular.module('tlfGroup').component('tlf.createGroup', {
+        templateUrl: 'src/tlf-group/create-group/template.html',
         controller: controller
     })
 })();

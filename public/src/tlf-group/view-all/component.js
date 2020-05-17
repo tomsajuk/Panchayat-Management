@@ -9,8 +9,8 @@
       })
     }
 
-    angular.module('home').component('home', {
-        templateUrl: 'src/home/template.html',
+    angular.module('tlfGroup').component('tlf.viewAll', {
+        templateUrl: 'src/tlf-group/view-all/template.html',
         controller: controller
     })
 })();

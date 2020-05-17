@@ -4,14 +4,23 @@
     <li class="nav-item" ui-sref="home" ui-sref-active="nav-active">HOME</li>
 
     <ul class="nav-dropdown">
-        <li class="nav-item" ng-click="toggleDropdown(0)"><span>ALF</span><span style="position:absolute;right:30px;"><</span></li>
+        <li class="nav-item" ng-click="toggleDropdown(0)"><span>TLF</span><span style="position:absolute;right:30px;"><</span></li>
+        <ul class="sub-nav">
+            <li class="nav-item" ui-sref="tlf.createGroup" ui-sref-active="nav-active">Create New TLF</li>
+            <li class="nav-item" ui-sref="tlf.viewAll" ui-sref-active="nav-active">View TLF</li>
+        </ul>
+    </ul>
+
+    <ul class="nav-dropdown">
+        <li class="nav-item" ng-click="toggleDropdown(1)"><span>ALF</span><span style="position:absolute;right:30px;"><</span></li>
         <ul class="sub-nav">
             <li class="nav-item" ui-sref="alf.createGroup" ui-sref-active="nav-active">Create New ALF</li>
             <li class="nav-item" ui-sref="alf.viewAll" ui-sref-active="nav-active">View ALF</li>
         </ul>
     </ul>
+
     <ul class="nav-dropdown">
-        <li class="nav-item" ng-click="toggleDropdown(1)"><span>SHG</span><span style="position:absolute;right:30px;"><</span></li>
+        <li class="nav-item" ng-click="toggleDropdown(2)"><span>SHG</span><span style="position:absolute;right:30px;"><</span></li>
         <ul class="sub-nav">
             <li class="nav-item" ui-sref="shg.createGroup" ui-sref-active="nav-active">Create New SHG</li>
             <li class="nav-item" ui-sref="shg.viewAll" ui-sref-active="nav-active">View SHG</li>
