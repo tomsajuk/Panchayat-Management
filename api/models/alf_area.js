@@ -1,5 +1,5 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('shg_details', {
+    return sequelize.define('alf_details', {
       id: {
         type: type.INTEGER,
         allowNull: false,
@@ -10,7 +10,7 @@ module.exports = (sequelize, type) => {
         type: type.STRING,
         allowNull: false
       },
-      under_alf: {
+      under_tlf: {
         type: type.INTEGER,
         allowNull: true   //change it later
       },
@@ -22,21 +22,12 @@ module.exports = (sequelize, type) => {
       },
       next_meeting_date: {
         type: type.DATE
-      },
-      savings: {
-        type: type.DECIMAL(10,2)
-      },
-      internal_balance: {
-        type: type.DECIMAL(10,2)
-      },
-      bank_balance: {
-        type: type.DECIMAL(10,2)
-      },
+        },
       corpus: {
-          type: type.DECIMAL(10,2)
+          type: type.FLOAT
       }
     }, {
-      modelName: 'shg_details',
+      modelName: 'alf_details',
       timestamps: false
     });
 }

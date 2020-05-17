@@ -15,7 +15,7 @@
         });
     }
 
-    angular.module('viewGroup').component('viewGroup', {
+    angular.module('shgGroup').component('shg.viewGroup', {
         templateUrl: 'src/shg-group/view-group/template.html',
         controller: controller
     })

@@ -3,14 +3,14 @@
 
     function controller($scope, $http) {
       $scope.areas = [];
-      $http.get('api/alf/').then(function(res) {
+      $http.get('api/shg/').then(function(res) {
         $scope.areas = res.data;
         console.log(res.data);
       })
     }
 
-    angular.module('home').component('home', {
-        templateUrl: 'src/home/template.html',
+    angular.module('shgGroup').component('shg.viewAll', {
+        templateUrl: 'src/shg-group/view-all/template.html',
         controller: controller
     })
 })();

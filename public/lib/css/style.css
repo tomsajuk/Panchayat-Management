@@ -33,7 +33,7 @@ nav-bar li {
   padding: 20px;
   cursor: pointer;
 }
-nav-bar li:hover {
+nav-bar .nav-item:hover {
   background-color: #20a8d8;
 }
 

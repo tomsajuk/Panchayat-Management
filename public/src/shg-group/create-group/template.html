@@ -14,7 +14,11 @@
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Under ALF</label>
-                    <input ng-model="group.slf" type="text">
+                    <md-select ng-model="group.alf_id">
+                        <md-option ng-repeat="alf in alfs" value="{{alf.id}}">
+                            {{alf.name}}
+                        </md-option>
+                    </md-select>
                 </md-input-container>
                 <md-input-container>
                     <label>SHG Corpus</label>

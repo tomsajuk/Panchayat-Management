@@ -1,0 +1,34 @@
+<div ng-cloak >
+  <md-content class="md-padding">
+     <md-card >
+       <md-card-title class="title">
+         <md-card-title-text>{{alfName}} Group Members</md-card-title-text>
+       </md-card-title>
+       <md-card-content class="md-padding">
+
+         <table class='mep-table'>
+           <thead>
+             <th style="width:">Name of SHGs</th>
+             <th>Savings</th>
+             <th>Internal Loan Balance</th>
+             <th>Bank Loan Balance</th>
+             <th style="width:">Corpus</th>
+           </thead>
+            <tbody>
+              <tr ng-repeat="shg in shgs">
+                <td>{{shg.name}}</td>
+                <td>{{shg.savings | currency:'₹'}}</td>
+                <td>{{shg.internal_balance | currency:'₹'}}</td>
+                <td>{{shg.bank_balance | currency:'₹'}}</td>
+                <td>{{shg.corpus | currency:'₹'}}</td>
+              </tr>
+
+            </tbody>
+         </table>
+
+
+       </md-card-content>
+     </md-card>
+  </md-content>
+
+</div>

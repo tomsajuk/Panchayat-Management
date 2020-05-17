@@ -5,6 +5,12 @@
         $scope.group = {};
         $scope.group.users = [{}];
         $scope.noOfMembers = 1;
+        $scope.alfs = [];
+
+        $http.get('/api/alf/name').then(function(res) {
+            $scope.alfs = res.data;
+            console.log(res.data);
+        });
 
         $scope.addMember = function(nums) {
           let length = $scope.group.users.length;
@@ -27,7 +33,7 @@
         }
     }
 
-    angular.module('createGroup').component('createGroup', {
+    angular.module('shgGroup').component('shg.createGroup', {
         templateUrl: 'src/shg-group/create-group/template.html',
         controller: controller
     })

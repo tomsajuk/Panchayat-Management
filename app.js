@@ -8,9 +8,11 @@ var app = express();
 console.log("Server Started...");
 
 //controllers
+var alf_details = require('./api/controllers/alf.js');
 var shg_details = require('./api/controllers/shg.js');
 var people_details = require('./api/controllers/people.js');
 var shg_meeting = require('./api/controllers/shg_meeting.js');
+var alf_meeting = require('./api/controllers/alf_meeting.js');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,9 +26,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
+app.use('/api/alf', alf_details);
 app.use('/api/shg', shg_details);
 app.use('/api/people', people_details);
 app.use('/api/meeting/shg', shg_meeting);
+app.use('/api/meeting/alf', alf_meeting);
 
 //Error handling 404
 app.use(function(req, res, next) {

@@ -31,6 +31,7 @@ router.post('/create', function(req, res, next) {
     console.log(req.body);
     let shg_details = {};
     shg_details.name = req.body.name;
+    shg_details.under_alf = req.body.alf_id
     shg_details.corpus = req.body.corpus;
     let members = req.body.users;
     console.log(members);
@@ -47,7 +48,21 @@ router.post('/create', function(req, res, next) {
         res.status(201);
         res.end()
     });
-})
+});
+
+router.get('/alf/:alf_id', function(req, res, next) {
+    console.log(req.params.alf_id);
+    let alf_id = parseInt(req.params.alf_id);
+    console.log(alf_id);
+  SHG.findAll({
+      where: { under_alf: alf_id }
+  }).then(shgs => {
+    console.log("All SHGs:", JSON.stringify(shgs, null, 4));
+    res.json(shgs);
+    res.status(200);
+    res.end();
+  });
+});
 
 
 module.exports = router;

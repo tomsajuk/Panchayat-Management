@@ -24,7 +24,7 @@
 
     }
 
-    angular.module('addMeeting').component('addMeeting', {
+    angular.module('shgGroup').component('shg.addMeeting', {
         templateUrl: 'src/shg-group/add-meeting/template.html',
         controller: controller
     })

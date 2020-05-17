@@ -9,8 +9,8 @@
       })
     }
 
-    angular.module('home').component('home', {
-        templateUrl: 'src/home/template.html',
+    angular.module('alfGroup').component('alf.viewAll', {
+        templateUrl: 'src/alf-group/view-all/template.html',
         controller: controller
     })
 })();

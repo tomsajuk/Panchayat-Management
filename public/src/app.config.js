@@ -8,17 +8,13 @@
                     url: '/',
                     component: 'home'
                 })
-                .state('addMeeting', {
-                    url: '/addMeeting/:shg_id',
-                    component: 'addMeeting'
+                .state('alf', {
+                    url: '/alf',
+                    component:'alfGroup'
                 })
-                .state('createGroup', {
-                    url: '/creategroup',
-                    component: 'createGroup'
-                })
-                .state('viewGroup', {
-                    url: '/viewgroup/:shg_id',
-                    component: 'viewGroup'
+                .state('shg', {
+                    url: '/shg',
+                    component: 'shgGroup'
                 });
             $urlRouterProvider.otherwise('/');
     });

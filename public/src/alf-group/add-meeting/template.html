@@ -1,0 +1,110 @@
+<md-content layout-padding>
+    <md-card>
+
+        <md-card-title class="title">{{alfName}} Meeting Record</md-card-title>
+        <md-card-content>
+            <md-input-container flex-gt-sm>
+              <label>Meeting Date</label>
+              <input ng-model="meeting_date" type="date">
+            </md-input-container>
+            <md-input-container flex-gt-sm>
+              <label>Next Meeting Date</label>
+              <input ng-model="next_meeting_date" type="date">
+            </md-input-container>
+
+            <md-card ng-repeat="shg in members" class="md-block">
+
+                <md-card-header>
+                    <md-card-header-text>
+                        <span>SHG Name: {{shg.name}}
+                        Previous Corpus: {{shg.corpus | currency:'₹'}}
+                        <md-input-container>
+                            <label>Attendence</label>
+                            <md-select ng-model="shg.attendence">
+                                <md-option value="1">Present</md-option>
+                                <md-option value="0">Absent</md-option>
+                            </md-select>
+                        </md-input-container>
+                        </span>
+                    </md-card-header-text>
+
+                </md-card-header>
+                <md-card-content ng-if="shg.attendence == 1">
+                    <div class="savings">
+                        Savings
+                        <md-content class="md-block">
+                            <md-input-container class="">
+                              <label>Savings</label>
+                              <input ng-model="shg.new.savings" type="number" value="0">
+                            </md-input-container>
+                            <md-input-container class="">
+                              <label>Health</label>
+                              <input ng-model="shg.new.health" type="number" value="0">
+                            </md-input-container>
+                            <md-input-container class="">
+                              <label>Streenidhi</label>
+                              <input ng-model="shg.new.streenidhi" type="number" value="0">
+                            </md-input-container>
+                            <md-input-container class="">
+                              <label>Fines</label>
+                              <input ng-model="shg.new.fines" type="number" value="0">
+                            </md-input-container>
+                            <md-input-container class="">
+                              <label>Others</label>
+                              <input ng-model="shg.new.others" type="number" value="0">
+                            </md-input-container>
+                        </md-content>
+                    </div>
+                    <div class="internalLoan">
+                        SHG Internal Loans Repayment
+                        <md-content class="md-block">
+                            <md-input-container class="">
+                              <label>Capital</label>
+                              <input ng-model="shg.new.internal_capital" type="number" value="0">
+                            </md-input-container>
+                            <md-input-container class="">
+                              <label>Interest</label>
+                              <input ng-model="shg.new.internal_interest" type="number" value="0">
+                            </md-input-container>
+                            <md-input-container class="">
+                              <label>Balance</label>
+                              <input ng-model="shg.new.internal_balance" type="number" value="0">
+                            </md-input-container>
+                            <md-input-container class="">
+                              <label>Overdue</label>
+                              <input ng-model="shg.new.internal_overdue" type="number" value="0">
+                            </md-input-container>
+                        </md-content>
+                    </div>
+                    <div>
+                        Bank Loan Repayment
+                        <md-content class="md-block">
+                            <md-input-container class="">
+                              <label>Bank EMI</label>
+                              <input ng-model="shg.new.bank_emi" type="number" value="0">
+                            </md-input-container>
+                            <md-input-container class="">
+                              <label>Balance</label>
+                              <input ng-model="shg.new.bank_balance" type="number" value="0">
+                            </md-input-container>
+                            <md-input-container class="">
+                              <label>Overdue</label>
+                              <input ng-model="shg.new.bank_overdue" type="number" value="0">
+                            </md-input-container>
+                        </md-content>
+
+                    </div>
+                    <div>
+                        <md-input-container class="">
+                          <label>Internal Loan Taken</label>
+                          <input ng-model="shg.new.internal_loan_amount" type="number" value="0">
+                        </md-input-container>
+                    </div>
+                </md-card-content>
+            </md-card>
+
+            <md-button class="md-raised md-primary" ng-click="recordMeeting(members, meeting_date, next_meeting_date)">Record</md-button>
+
+        </md-card-content>
+    </md-card>
+</md-content>
