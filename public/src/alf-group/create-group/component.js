@@ -4,7 +4,7 @@
     function controller($scope, $state, $stateParams, $http) {
         $scope.group = {};
         $scope.group.shgs = [{}];
-        $scope.noOfShgs = 1;
+        $scope.noOfMembers = 1;
 
         $scope.addMember = function(nums) {
           let length = $scope.group.shgs.length;
@@ -20,7 +20,7 @@
 
         $scope.createGroup = function(alfgroup) {   // TODO: check how radio value can be passed
             console.log(alfgroup);
-            $http.post('/api/alf/create',shgroup).then(function(res) {
+            $http.post('/api/alf/create',alfgroup).then(function(res) {
                 console.log(res);
                 $state.go('home');
             });

@@ -31,10 +31,10 @@ const SHGRecord = SHGMeetingModel(sequelize, Sequelize);
 const ALFRecord = ALFMeetingModel(sequelize, Sequelize);
 
 //for production
-ALF.sync();
-SHG.sync();
-People.sync();
-SHGRecord.sync();
-ALFRecord.sync();
+// ALF.sync();
+// SHG.sync();
+// People.sync();
+// SHGRecord.sync();
+// ALFRecord.sync();
 
 module.exports = { ALF, SHG, People, SHGRecord, ALFRecord }
