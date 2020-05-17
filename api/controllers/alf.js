@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let { ALF, People } = require('../sequelize');
+let { ALF, SHG, People } = require('../sequelize');
 const bodyParser = require('body-parser');
 
 var app = express();
@@ -43,12 +43,12 @@ router.post('/create', function(req, res, next) {
     let alf_details = {};
     alf_details.name = req.body.name;
     alf_details.corpus = req.body.corpus;
-    let shgs = req.body.shgs;
-    console.log(members);
+    let shgs = req.body.members;
+    console.log(shgs);
     ALF.create(alf_details).then(alf => {
         console.log("ALF id ", alf.id);
         shgs.forEach(function(shg) {
-            shg.shg_id = alf.id;
+            shg.under_alf = alf.id;
             console.log(shg);
             SHG.create(shg).then(shg => {
                 console.log("SHG created ", SHG.id);

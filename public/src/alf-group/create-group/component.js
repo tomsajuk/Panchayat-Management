@@ -3,18 +3,18 @@
 
     function controller($scope, $state, $stateParams, $http) {
         $scope.group = {};
-        $scope.group.shgs = [{}];
+        $scope.group.members = [{}];
         $scope.noOfMembers = 1;
 
         $scope.addMember = function(nums) {
-          let length = $scope.group.shgs.length;
+          let length = $scope.group.members.length;
           console.log(nums, length)
           if(nums > length) {
               for(let i=0;i<(nums-length);i++) {
-                $scope.group.shgs.push({});
+                $scope.group.members.push({});
               }
           } else if (nums < length) {
-            $scope.group.shgs.splice(nums,length-nums);
+            $scope.group.members.splice(nums,length-nums);
           }
         }
 

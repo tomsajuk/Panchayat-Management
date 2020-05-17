@@ -24,7 +24,7 @@
                     <label>Number of SHGs</label>
                     <input type="number" ng-model="noOfMembers" ng-change="addMember(noOfMembers)" >
                 </md-input-container>
-                <div class="md-block" ng-repeat="shg in group.shgs">
+                <div class="md-block" ng-repeat="shg in group.members">
                   <div>
                       <md-input-container flex-gt-sm>
                         <label>SHG Name</label>
